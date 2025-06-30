@@ -102,10 +102,10 @@ void servo_init()
     }
 }
 
-//reach are how much degree from 90 degrees
-// k is 0 for first servo, 1 for second servo
-// d is for the direction of the servo movement
-// for the primary link
+// reach are how much degree from 90 degrees
+//  k is 0 for first servo, 1 for second servo
+//  d is for the direction of the servo movement
+//  for the primary link
 
 // positive d mean servo will move to the right for << front left >> and back right will move the opposite
 // positive d mean servo will move to the right for << front right >> and back left will move the opposite
@@ -224,7 +224,7 @@ void smooth_walk_sequence()
         front_left(mapReach(init_reach, reach), 0, -1);
         back_right(reach, 0, -1);
 
-        // backward 2   
+        // backward 2
         front_right(reach, 0, 1);
         back_left(mapReach(init_reach, reach), 0, 1);
 
@@ -242,7 +242,7 @@ void smooth_walk_sequence()
         back_left(reverseMap(i, up, down), 1, -1);
         vTaskDelay(pdMS_TO_TICKS(15));
     }
-    
+
     for (reach = 0; reach <= init_reach; reach++)
     {
         // backward 1
@@ -273,6 +273,65 @@ void laying_sequence(int x)
     back_left(0, 0, 1);   // Back Left
 }
 
+void turning_sequence(int8_t direction)
+{
+    // Example: move left legs forward, right legs backward for turning
+    // uint8_t up = 45;
+    // uint8_t down = 15;
+    // int8_t reach = 30 * (direction > 0 ? 1 : -1);
+
+    uint8_t up = 30;
+    uint8_t down = 5;
+
+    uint8_t reach;
+    uint8_t init_reach = 35;
+
+    for (uint8_t i = up; i >= down; i--)
+    {
+        // up 1
+        front_left(reverseMap(i, up, down), 1, 1);
+        back_right(reverseMap(i, up, down), 1, 1);
+
+        // down 2
+        front_right(i, 1, -1);
+        back_left(i, 1, -1);
+
+        vTaskDelay(pdMS_TO_TICKS(15));
+    }
+
+    for (reach = 0; reach <= init_reach; reach++)
+    { // Move left legs forward, right legs backward
+        front_left(reach, 0, direction);
+        back_right(reach, 0, direction);
+
+        front_right(reach, 0, -1 * direction);
+        back_left(reach, 0, -1 * direction);
+        vTaskDelay(pdMS_TO_TICKS(15));
+    }
+
+    for (int i = up; i >= down; i--)
+    {
+        // down 1
+        front_left(i, 1, 1);
+        back_right(i, 1, 1);
+
+        // up 2
+        front_right(reverseMap(i, up, down), 1, -1);
+        back_left(reverseMap(i, up, down), 1, -1);
+        vTaskDelay(pdMS_TO_TICKS(15));
+    }
+
+    for (reach = 0; reach <= init_reach; reach++)
+    { // Move left legs backward, right legs forward
+        front_left(reach, 0, -1 * direction);
+        back_right(reach, 0, -1 * direction);
+
+        front_right(reach, 0, direction);
+        back_left(reach, 0, direction);
+        vTaskDelay(pdMS_TO_TICKS(15));
+    }
+}
+
 void app_main(void)
 {
     servo_init();
@@ -285,7 +344,40 @@ void app_main(void)
 
     while (1)
     {
-        smooth_walk_sequence();
-        ESP_LOGI(TAG, "Walking sequence completed");
+        for (int i = 0; i < 3; i++)
+        {
+            smooth_walk_sequence();
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+        laying_sequence(20);
+        vTaskDelay(pdMS_TO_TICKS(500));
+
+        for (int i = 0; i < 5; i++)
+        {
+            turning_sequence(1); // Turn left
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+        laying_sequence(20);
+        vTaskDelay(pdMS_TO_TICKS(500));
+
+        for (int i = 0; i < 3; i++)
+        {
+            smooth_walk_sequence();
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+        laying_sequence(20);
+        vTaskDelay(pdMS_TO_TICKS(500));
+
+        for (int i = 0; i < 5; i++)
+        {
+            turning_sequence(-1); // Turn left
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+        laying_sequence(20);
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
