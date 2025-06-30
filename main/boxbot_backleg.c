@@ -20,8 +20,6 @@ static char *TAG = "Logs";
 
 #define SERVO_COUNT 8
 const int SERVO_GPIO[SERVO_COUNT] = {32, 33, 25, 26, 27, 14, 12, 13};
-//------------------------------------0--01---2--03---4--05---6---7----
-// the one with 01 03 is the prime link.
 
 #define TIMER_COUNT 2
 #define OPERATOR_PER_TIMER 2
@@ -103,6 +101,18 @@ void servo_init()
         ESP_ERROR_CHECK(mcpwm_timer_start_stop(timers[t], MCPWM_TIMER_START_NO_STOP));
     }
 }
+
+//reach are how much degree from 90 degrees
+// k is 0 for first servo, 1 for second servo
+// d is for the direction of the servo movement
+// for the primary link
+
+// positive d mean servo will move to the right for << front left >> and back right will move the opposite
+// positive d mean servo will move to the right for << front right >> and back left will move the opposite
+
+// for the secondary link
+// front left and back right will move up with << positive >> d
+// front right and back left will move up with << negative >> d
 
 void front_left(short reach, short k, short d)
 {
@@ -278,71 +288,4 @@ void app_main(void)
         smooth_walk_sequence();
         ESP_LOGI(TAG, "Walking sequence completed");
     }
-
-    // int angle = 0;
-    // while (1)
-    // {
-    //     if (angle == 61)
-    //     {
-    //         angle = 0;
-    //     }
-    //     else if (angle < 61)
-    //     {
-    //         laying_sequence(angle);
-    //         ESP_LOGI(TAG, "Laying sequence | angle: %d", angle);
-    //         vTaskDelay(pdMS_TO_TICKS(500));
-    //         angle++;
-    //     }
-
-    // }
 }
-
-// void walking_sequence()
-// {
-
-//     int up = 45;
-//     int down = 15;
-
-//     int reach = 35;
-
-//     // up 1
-//     front_left(up, 1, 1);
-//     back_right(up, 1, 1);
-
-//     // down 2
-//     front_right(down, 1, -1);
-//     back_left(down, 1, -1);
-
-//     vTaskDelay(pdMS_TO_TICKS(250));
-
-//     // fowards 1
-//     front_left(mapReach(reach), 0, -1);
-//     back_right(reach, 0, -1);
-
-//     // backward 2
-//     front_right(reach, 0, 1);
-//     back_left(mapReach(reach), 0, 1);
-
-//     vTaskDelay(pdMS_TO_TICKS(250));
-
-//     // down 1
-//     front_left(down, 1, 1);
-//     back_right(down, 1, 1);
-
-//     // up 2
-//     front_right(up, 1, -1);
-//     back_left(up, 1, -1);
-
-//     vTaskDelay(pdMS_TO_TICKS(250));
-
-//     // backward 1
-
-//     front_left(reach, 0, -1);
-//     back_right(mapReach(reach), 0, -1);
-
-//     // fowards 2
-//     front_right(mapReach(reach), 0, 1);
-//     back_left(reach, 0, 1);
-
-//     vTaskDelay(pdMS_TO_TICKS(250));
-// }
