@@ -1,0 +1,209 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47ed: uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:168
+0x400d4e99: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:218
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47fa: uart_ll_get_txfifo_len at D:/Code/fuckesp/v5.4/esp-idf/components/hal/esp32/include/hal/uart_ll.h:428
+ (inlined by) uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:170
+0x400d4eb7: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47f5: uart_ll_get_txfifo_len at D:/Code/fuckesp/v5.4/esp-idf/components/hal/esp32/include/hal/uart_ll.h:428
+ (inlined by) uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:170
+0x400d4eb7: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47ed: uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:168
+0x400d4eb7: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47ed: uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:168
+0x400d4eb7: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47ed: uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:168
+0x400d4eb7: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47ed: uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:168
+0x400d4eb7: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0;33m--- 0x400d7b62: task_wdt_timeout_handling at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+0x400d7f24: task_wdt_isr at D:/Code/fuckesp/v5.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+0x40082e91: _xt_lowint1 at D:/Code/fuckesp/v5.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+0x400d47ed: uart_tx_char at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:168
+0x400d4eb7: uart_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:223
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000182a: write in ROM
+0x400d5799: console_write at D:/Code/fuckesp/v5.4/esp-idf/components/esp_vfs_console/vfs_console.c:71
+0x400d5d66: esp_vfs_write at D:/Code/fuckesp/v5.4/esp-idf/components/vfs/vfs.c:945 (discriminator 4)
+0x4000bd83: _write_r in ROM
+0x4000117d: __swrite in ROM
+0x400592fe: __sflush_r in ROM
+0x4005937a: _fflush_r in ROM
+0x400daa21: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x400de5f3: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x400de00a: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x400daac9: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x400e590d: esp_log_writev at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:34
+0x4008b4e5: esp_log_write at D:/Code/fuckesp/v5.4/esp-idf/components/log/src/os/log_write.c:44
+0x400d6b15: app_main at D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:213 (discriminator 1)
+0x400e5338: main_task at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/app_startup.c:208
+0x4008600d: vPortTaskWrapper at D:/Code/fuckesp/v5.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+[0m
+[0m

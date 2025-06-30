@@ -1,0 +1,14 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Code\boxbot\boxbot_backleg\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe D:/Code/fuckesp/v5.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Code/boxbot/boxbot_backleg/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6560 bytes. 0xaa0 bytes (9%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/boxbot_backleg.c.obj
+D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c: In function 'walking_sequence':
+D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:197:33: warning: iteration 2147483723 invokes undefined behavior [-Waggressive-loop-optimizations]
+  197 |     for (int i = 75; i <= 135; i--)
+      |                                ~^~
+D:/Code/boxbot/boxbot_backleg/main/boxbot_backleg.c:197:24: note: within this loop
+  197 |     for (int i = 75; i <= 135; i--)
+      |                      ~~^~~~~~
+[5/10] Linking C static library esp-idf\main\libmain.a
